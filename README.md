@@ -2,7 +2,7 @@
 
 ## Deployed Site
 
-[Deployed Site Here](https://ereneedolan.github.io/Random-Password-Generator/)
+[Deployed Site Here](https://ereneedolan.github.io/timed-coding-quiz/)
 
 ## Screenshot
 
