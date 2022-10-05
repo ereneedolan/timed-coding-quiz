@@ -6,6 +6,12 @@
     // The timer should display the number(seconds) and the words seconds remaining    
     // the scorecard should display headers Player Score and Player Initials
 
+var newGameBtn = document.getElementById("new-game");
+var timeCountdown = document.getElementById("time-countdown");   
+var gameResetBtn = document.getElementById("game-reset");
+    
+    
+
 // DATA / STATE
 // need a variable to hold our questions
 // variable to hold the answer the user selected
@@ -14,6 +20,15 @@
 // variable to hold initials
 // Variable of player's score
 // Variable to save score in local storage
+
+var timer = {}; //going to hold the timer passed from the setInterval
+var countdownRemaining = 60;
+
+var scoreSaved = {
+    wins: 0,
+    losses: 0,
+    totalGames: 0
+};
 
 // FUNCTIONS
 
