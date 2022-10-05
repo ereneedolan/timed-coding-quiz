@@ -64,7 +64,7 @@ document.addEventListener("keypress", keypressCallback);
 //The user starts the coding quiz by clicking the start button
     // when the user click the start button a timer will start
     // the first question will appear
-//When the user answers a question
+//When the user answers a question and hits the submit button
     //if the answer is correct the user will get 5 points, a "correct!" message will be displayed and another question will appear  
     // if the answer is incorrect 10 seconds will be subtracted from the clock, a "wrong! message will be displayed and another question will appear
     //the user will get 0 points for a wrong answer
