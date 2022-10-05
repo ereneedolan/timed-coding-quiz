@@ -29,12 +29,28 @@ var timer = {}; //going to hold the timer passed from the setInterval
 var countdownRemaining = 60;
 
 var scoreSaved = {
-    wins: 0,
-    losses: 0,
-    totalGames: 0
+    
 };
+ var sectionNum = 0
 
 // FUNCTIONS
+
+function startQuiz (){
+    startTimer();
+    sectionNum++
+    startSlides();
+}
+
+function startSlides(){
+    for(i=0; i<7; i++){
+        document.getElementById("section-"+ i).
+        classList.add("hidden")
+    }
+    document.getElementById("section-"+ sectionNum).
+        classList.remove("hidden")
+}
+ startSlides()
+
 
 function startTimer (){
     timeCountdown.textContent=countdownRemaining;
@@ -47,7 +63,8 @@ function startTimer (){
         timeCountdown.textContent=countdownRemaining;
     }, 1000); 
 
-    wordDisplay.innerHTML = ""; //code gets executed the first time user navigates to the page/refreshes page
+    //wordDisplay.innerHTML = ""; //code gets executed the first time user navigates to the page/refreshes page
+}
 var object = JSON.parse(localStorage.getItem("scoreCard"));
 if(object !== null){
     scoreSaved = object;
@@ -55,9 +72,10 @@ if(object !== null){
 
 
 
-newGameBtn.addEventListener("click", );
-gameResetBtn.addEventListener("click", );
-document.addEventListener("keypress", keypressCallback);
+newGameBtn.addEventListener("click", startQuiz);
+gameResetBtn.addEventListener("click", startQuiz);
+//multiple choice selection
+
 
 // USER INTERACTIONS
 // A user can click...
