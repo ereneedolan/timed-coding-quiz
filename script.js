@@ -1,14 +1,18 @@
 // DEPENDENCIES (DOM ELEMENTS)
-
+// Button to start the game/new game
+// container that container 
+    // each character not filled in will be an underscore
+// Need another container that will hold the time, scorecard
+    // The timer should display the number(seconds) and the words seconds remaining    
+    // the scorecard should display headers Player Score and Player Initials
 
 // DATA / STATE
-// array of words from which we will choose one randomly
-// need a variable to hold our chosen random word
-// variable to hold the character the user typed
+// need a variable to hold our questions
+// variable to hold the answer the user selected
 // variable to hold the actual timer
 // variable to hold the countdown of remaining seconds
 // variable to hold initials
-// Variable of number of games played
+// Variable of player's score
 // Variable to save score in local storage
 
 // FUNCTIONS
