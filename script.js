@@ -13,9 +13,7 @@ var gameResetBtn = document.getElementById("game-reset");
 var newGameBtnCallback = function (event){
     event.stopPropagation();
     countdownRemaining = 60;
-    
 }
-    
     
 
 // DATA / STATE
