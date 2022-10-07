@@ -5,5 +5,35 @@
 }
 
 .hidden {
-display: none;
+    display: none;
+    }
+
+#section-0{
+background-color: antiquewhite;
 }
+
+#section-1{
+    background-color: antiquewhite;
+}
+
+#section-2{
+background-color: antiquewhite;
+}
+
+#section-3{
+background-color: antiquewhite;
+}
+
+#section-4{
+background-color: antiquewhite;
+}
+
+#section-5{
+background-color: antiquewhite;
+}    
+
+#section-6{
+background-color: antiquewhite;
+}
+
+
