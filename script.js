@@ -9,6 +9,8 @@
 var newGameBtn = document.getElementById("new-game");
 var timeCountdown = document.getElementById("time-countdown");   
 var gameResetBtn = document.getElementById("game-reset");
+var answerBtn = document.querySelectorAll(".answer-buttons")
+
 
 var newGameBtnCallback = function (event){
     event.stopPropagation();
@@ -51,6 +53,25 @@ function startSlides(){
 }
  startSlides()
 
+function nextQuestion(event){
+    var answer = event.target.dataset.correct;
+    //took out of if, else to consolidate/refactor
+        sectionNum ++;
+        startSlides();
+        stopTimer();
+    if(answer === "true") {
+    }
+    else {
+        countdownRemaining -= 10;
+    }
+}
+
+function stopTimer (){
+    console.log(sectionNum)
+    if (sectionNum === 6){ 
+        clearInterval(timer);
+    }
+}
 
 function startTimer (){
     timeCountdown.textContent=countdownRemaining;
@@ -62,7 +83,6 @@ function startTimer (){
         }
         timeCountdown.textContent=countdownRemaining;
     }, 1000); 
-
     //wordDisplay.innerHTML = ""; //code gets executed the first time user navigates to the page/refreshes page
 }
 var object = JSON.parse(localStorage.getItem("scoreCard"));
@@ -70,10 +90,23 @@ if(object !== null){
     scoreSaved = object;
 }
 
+function saveHighScore (){
+    //grab the initials
+    // localStorage.setItem("score", initials+countdownRemaining)
+    // when they click the submit button for initials saved high score 
 
+}
+function getHighScore (){
+    // var highScore = localStorage.getItem("score")
+}
 
 newGameBtn.addEventListener("click", startQuiz);
 gameResetBtn.addEventListener("click", startQuiz);
+answerBtn.forEach(function(button){
+    button.addEventListener("click", nextQuestion);
+})
+
+
 //multiple choice selection
 
 
