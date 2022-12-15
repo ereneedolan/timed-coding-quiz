@@ -60,9 +60,9 @@
 
     <section id="section-6">
         <h2>Game Finished</h2>
-        <p>Your score is</p>
-        <p>Please enter your initials</p>
-        <input type="Initials here">
+        <label>Please enter your intials here:</label>
+            <input id="game-score" type="text">
+            <button id="submit-btn">Save your high score</button>
     </section>
 
     <section id="game-info">
@@ -70,10 +70,13 @@
             <h2>Timer</h2>
             <p><span id="time-countdown">60</span> seconds remaining</p>
         </div>
-        <div id="score-container">
+
+        <div class ="hidden" id="score-container">
             <h2>Score</h2>
-            <h3>Player Score: <span id="player-score">0</span></h3>
-            <h3>Player Initials: <span id="player-initials">0</span></h3>
+            <h3>Player Initials and Score: <span id="player-score"></span></h3>
+        </div>
+        <div>
+            <button id="game-score">show high score</button>
             <button id="game-reset">game reset button</button>
         </div>
     </section>    

@@ -10,7 +10,8 @@ var newGameBtn = document.getElementById("new-game");
 var timeCountdown = document.getElementById("time-countdown");   
 var gameResetBtn = document.getElementById("game-reset");
 var answerBtn = document.querySelectorAll(".answer-buttons")
-
+var newScoreBtn = document.getElementById("submit-btn")
+var highScoreBtn = document.getElementById("game-score")
 
 var newGameBtnCallback = function (event){
     event.stopPropagation();
@@ -57,13 +58,15 @@ function nextQuestion(event){
     var answer = event.target.dataset.correct;
     //took out of if, else to consolidate/refactor
         sectionNum ++;
-        startSlides();
-        stopTimer();
-    if(answer === "true") {
+    
+    if(answer == "true") {
     }
     else {
         countdownRemaining -= 10;
+        timeCountdown.textContent=countdownRemaining;
     }
+    startSlides();
+    stopTimer();
 }
 
 function stopTimer (){
@@ -77,7 +80,7 @@ function startTimer (){
     timeCountdown.textContent=countdownRemaining;
     timer = setInterval(function(){
         countdownRemaining--;
-        if(countdownRemaining===0){
+        if(countdownRemaining<=0){
             clearInterval(timer);
             localStorage.setItem("", JSON.stringify(scoreSaved));
         }
@@ -91,17 +94,25 @@ if(object !== null){
 }
 
 function saveHighScore (){
-    //grab the initials
-    // localStorage.setItem("score", initials+countdownRemaining)
+    var initials = document.getElementById("game-score").value
+    localStorage.setItem("game-score", initials+countdownRemaining)
     // when they click the submit button for initials saved high score 
 
 }
 function getHighScore (){
-    // var highScore = localStorage.getItem("score")
+    console.log("score")
+    document.getElementById("score-container").classList.remove("hidden")
+    var highScore = localStorage.getItem("game-score")
+    var showScore= document.getElementById("player-score")
+    showScore.textContent=highScore
 }
 
 newGameBtn.addEventListener("click", startQuiz);
-gameResetBtn.addEventListener("click", startQuiz);
+newScoreBtn.addEventListener("click", saveHighScore);
+highScoreBtn.addEventListener("click", getHighScore);
+gameResetBtn.addEventListener("click", function(){
+    location.reload()
+});
 answerBtn.forEach(function(button){
     button.addEventListener("click", nextQuestion);
 })
